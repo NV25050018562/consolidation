@@ -29,7 +29,8 @@ class Note(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     # links each note to a user via foreignkey
-    author = models.ForeignKey("Author", on_delete=models.CASCADE, null=True, blank=True)
+    author = models.ForeignKey("Author",
+                               on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.title

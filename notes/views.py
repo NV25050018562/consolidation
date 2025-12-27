@@ -63,4 +63,3 @@ def delete_note(request, pk):
     note = get_object_or_404(Note, pk=pk)
     note.delete()
     return redirect("note_list")
-
