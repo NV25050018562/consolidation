@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Note
 from .forms import NoteForm
 
-# geting all notes
+'''Handles User Requestsgid '''
 
 
 def note_list(request):
