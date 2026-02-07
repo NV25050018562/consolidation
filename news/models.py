@@ -8,6 +8,7 @@ The model is for handling user roles
 
 
 class CustomUser(AbstractUser):
+    '''Custom user model with role-based fields and group assignment'''
     ROLE_CHOICES = (
         ("reader", "Reader"),
         ("journalist", "Journalist"),
@@ -61,6 +62,8 @@ The model is for handling publisher name
 
 # PUBLISHER MODEL
 class Publisher(models.Model):
+    '''Model representing a news publisher'''
+
     name = models.CharField(max_length=255)
 
     def __str__(self):
@@ -74,6 +77,8 @@ The model is for handling articles data
 
 # ARTICLE MODEL
 class Article(models.Model):
+    '''Model representing a news article'''
+
     title = models.CharField(max_length=255)
     content = models.TextField()
     approved = models.BooleanField(default=False)
@@ -88,6 +93,7 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+
 '''
 The model is for handling newsletter data
 '''
@@ -95,6 +101,8 @@ The model is for handling newsletter data
 
 # NEWSLETTERS MODEL
 class Newsletter(models.Model):
+    '''Model representing a newsletter'''
+    
     title = models.CharField(max_length=255)
     content = models.TextField()
     publisher = models.ForeignKey(
