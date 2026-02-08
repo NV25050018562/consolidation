@@ -105,22 +105,8 @@ WSGI_APPLICATION = "News_Application.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "newsapp_db",  # changed the name from"db.sqlite3"
-        "USER": "root",
-        "PASSWORD": "nomfanelo.mariadb",
-        "HOST": "localhost",
-        "PORT": "3306",
-        "OPTIONS": {
-            "charset": "utf8mb4",
-            "init_command": (
-                # character set in db
-                "SET sql_mode='STRICT_TRANS_TABLES', "
-                "character_set_connection=utf8mb4, "
-                "collation_connection=utf8mb4_unicode_ci, "
-                "default_storage_engine=InnoDB"
-            ),
-        },
+        "ENGINE": "django.db.backends.sqlite3",  # using SQLite for simplicity
+        "NAME": BASE_DIR / 'db.sqlite3',  # changed the name from"db.sqlite3"
     }
 }
 
